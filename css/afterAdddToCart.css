@@ -1,0 +1,5 @@
+@import "common.css";
+aside,
+main{
+    height: 340px;
+}

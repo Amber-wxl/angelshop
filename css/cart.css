@@ -1,0 +1,39 @@
+@import "common.css";
+aside,
+main{
+    height: 340px;
+}
+table{
+    margin: 28px;
+}
+table tr{
+    padding: 10px 2px;
+}
+table td{
+    padding: 15px 20px;
+    text-align: center;
+}
+a img{
+    width: 100px;
+    height: auto;
+}
+form p{
+    float: right;
+}
+form p input{
+    border: 1px solid ;
+    background-color: transparent;
+    padding: 3px 18px;
+    font-weight: 800;
+    font-size: 16px;
+}
+form p input:hover{
+    background-color: #E3AEB4;
+}
+.changeQuantity{
+    text-align: center;
+}
+
+.down,.up{
+    padding: 2px;
+}

@@ -1,0 +1,38 @@
+	aside,main{
+		height: 340px;
+	}
+	h2,.loginForm,.registerForm{
+		text-align: center;
+		margin-right: 230px;
+	}
+	.registerForm{
+	margin-top:5px;
+	}
+	.loginForm{
+	margin-top:40px;
+}	
+	main input{
+	border:1px solid #cccccc;
+	padding:6px;	
+	margin-bottom:30px;
+	}
+	label{
+	 font-size:14pt;
+	}   
+   .login,.register,main form a{
+    border-radius:8px;
+	padding:5px;	
+	font-size:14pt;
+	color:white;
+	font-weight:600;
+	background-color:#7B555A;
+	border: 1px solid;
+    }
+	.login:hover,.register:hover,main form a:hover{
+	 cursor:pointer;
+     background-color:#996363;
+	}
+	.register,
+	.login{
+	 text-align: center;	
+}   

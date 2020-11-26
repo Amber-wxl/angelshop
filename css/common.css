@@ -1,0 +1,182 @@
+/* 布局样式*/
+*{
+    padding:0px;
+    margin:0px;
+    color:#B5838D;
+}
+
+header,nav,aside,main,footer{ 
+    border:1px solid #BBBBBB;
+    padding:5px; 
+    margin:5px;
+}
+header,
+nav
+{
+    min-width: 1241px;
+}
+nav{
+	margin: 1px 5px;
+}
+aside{
+    width:180px;
+    float:left; 
+    height:727px;
+}
+main{
+    margin-left:200px;
+    margin-top: 6px;
+    min-width: 1046px;
+}
+footer{
+    clear:both; 
+}
+
+/* 清除标签自带样式*/
+p,span,a{
+    font-size:14px;
+}
+
+a,ul,li{
+    text-decoration:none;
+    color:#B5838D;;
+	list-style:none;
+}
+a:hover,
+button:hover
+{
+    color:#9B8281;
+}
+input,select{
+    cursor: pointer;
+    outline: none;
+}
+
+button{
+	border: none;
+	background-color: transparent;
+	cursor: pointer;
+}
+/* 基本布局样式 */
+@font-face {
+	font-family: 'iconfont';
+	src: url('../font/iconfont.eot');
+	src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'),
+		url('../font/iconfont.woff2') format('woff2'),
+		url('../font/iconfont.woff') format('woff'),
+		url('../font/iconfont.ttf') format('truetype'),
+		url('../font/iconfont.svg#iconfont') format('svg');
+  }
+
+  .iconfont {
+	font-family: "iconfont" !important;
+	font-size: 16px;
+	font-style: normal;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+  }
+
+/* header区的样式*/
+header{
+	background: url(../images/dz.jpg) no-repeat;
+	height: 88px;
+	background-size: 100% 100%;
+} 
+
+
+/* nav区的样式*/
+/* nav区的action的样式*/ 
+nav .action{
+	margin-top: 4px;	
+	float: left;
+}
+nav .action a{
+	display: inline-block;
+	margin: 5px;
+	line-height: 14px;
+}
+
+/* nav区的form样式*/ 
+nav .search{
+	border-radius: 30px;
+    border: 1px solid;
+	width: 355px;
+	height: 30px;
+    margin: 0 auto;
+}
+nav form,
+nav form input,
+nav form select
+{
+    font-size:16px;
+}
+nav form input,
+nav form select
+{
+  height:30px; 
+}
+nav form{
+	display: flex;
+}
+nav form input,
+nav form select,
+nav form select option:hover
+{
+	border: none;
+	background-color: transparent;
+}
+nav form button{
+	position: relative;
+	right: -49px;
+}
+nav form select{
+	position: relative;
+	right: -70px;
+}
+
+
+/* aside区的样式*/
+aside ul {
+	font-size: 18px;
+	font-weight: bold;
+	margin-left: 20px;
+}
+aside ul li{
+	margin: 5px 10px;
+	line-height:18px;
+}
+aside ul li ul{
+	margin-top: 10px;
+}
+aside ul li ul li{
+	font-weight: normal;
+	margin:5px 15px;
+}
+aside ul li ul li a{
+	display: block;
+	width: 100px;
+}
+
+
+
+/* footer区的样式*/
+footer{
+    text-align:center;
+    line-height:1.5;
+}
+footer a,
+footer span
+{
+    font-size:12pt;
+    font-weight:200;
+}
+/* 退出按钮样式 */
+
+button .exit{
+	font-size: 20px;
+  }
+button .exit:hover{
+	color: #7B555A;
+  }
+
+
