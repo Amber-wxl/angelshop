@@ -36,6 +36,26 @@ create table cart/*创建购物车表*/
   foreign key(clotheID) references clothes(clotheID) on delete cascade on update cascade
 );
 
+create table orders/*创建订单表*/
+(
+  orderID char(15) not null primary key,
+  account varchar(20) not null,
+  total double(8,2) not null,
+  deliverWay varchar(25) not null,/*发货方式*/
+  paymentWay varchar(25) not null,/*支付方式*/
+  orderTime datetime not null,
+  orderState varchar(10) not null default "待审核",/*订单状态*/
+  foreign key(account) references customer(account) on delete cascade on update cascade
+);
+
+create table suborders(
+  suborderID int unsigned auto_increment not null primary key,
+  clotheID int(20) not null,
+  orderID char(15) not null,
+  count int not null,
+  foreign key(orderID) references orders(orderID) on delete cascade on update cascade
+);
+
 insert into clothes values(null,'蓝色洋气钢琴演出服高端走秀拖尾公主裙蓬蓬纱', '广东-广州','公主','蓝色','7天内发货', 499.00,0.85,'images/a1.jpg','长款服装','从设计到工艺，从思考到原料，我们每一个环节都是精致细心，优雅的浅蓝色，一字肩设计款，梦幻般唯美，女孩的公主梦，我们替您实现。裙子胸前唯美的设计，可以拉长颈部线条，华丽的色彩、蓬松下垂的优雅版型衬出高贵优雅、利落的裁剪、手工缝制，腰带束身设计可以休身立体，让您化身美丽精灵。');
 insert into clothes values(null,'粉色公主裙洋气主持人钢琴演出服走秀蓬蓬裙', '广东-广州','公主','粉色','7天内发货', 349.00,0.88,'images/b1.jpg','长款服装','浪漫的粉色，时尚的蓬蓬裙，加上立体的裁剪，衬托出你的优雅气质，这是一款柔美又不失性感的礼服裙，粉色的裙摆加上独特的领部设计，后背拉链设计的简单方便，让你在舞台上走路自带美感，绽放耀眼的光芒。');
 insert into clothes values(null,'新款礼服公主裙高端模特走秀女孩气质钢琴比赛演出服', '广东-广州','公主','金色','7天内发货', 459.00,0.85,'images/c1.jpg','长款服装','华丽的金色，在胸前镶上高端定制制作的水钻，彰显唯美设计，拉长颈部线条，人工细心缝制的细心走线和优雅蓬松的版型将衬出您的优雅高贵，让你在人群中光芒万绽，化身美丽精灵。');

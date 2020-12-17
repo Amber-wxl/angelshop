@@ -1,64 +1,106 @@
 @import "common.css";
-aside{
+aside {
     height: 430px;
 }
-.clothe{
+
+.clothe {
     width: 1045px;
     height: 409px;
 }
-.cover{
- float:left;
- width:248px;
- margin:10px 43px auto 34px; 
+
+.cover {
+    float: left;
+    width: 248px;
+    margin: 10px 43px auto 34px;
 }
-main table{
-width:710px;
-margin-top:10px;
-float: left;
+
+main table {
+    width: 710px;
+    margin-top: 10px;
+    float: left;
 }
-tr{
- height:30px; 
+
+tr {
+    height: 30px;
 }
-td{
+
+td {
     font-size: 12px;
 }
 
-.clothe-name{
-    font-size:22px;
+.clothe-name {
+    font-size: 22px;
     font-weight: bold;
-    color:#7B555A;
+    color: #7B555A;
 }
-.site-price{
-    font-size:18px;
+
+.site-price {
+    font-size: 18px;
     font-weight: 800;
     color: #7B555A;
-;
+    ;
 }
-.cart{
-    font-family:ºÚÌå;
+
+.cart {
+    font-family: ºÚÌå;
     float: right;
     margin-top: -52px;
     margin-right: 249px;
-    }
-.cartlogo{
-      font-size: 40px;
-    }
-.cartlogo:hover{
-      color: #E3AEB4;
-     font-size: 45px;
 }
-.content{
+
+.cartlogo {
+    font-size: 40px;
+}
+
+.cartlogo:hover {
+    color: #E3AEB4;
+    font-size: 45px;
+}
+
+.content {
     line-height: 25px;
     margin: 22px 213px auto 35px;
 }
-button{
+
+button {
     border: none;
     background-color: transparent;
     cursor: pointer;
-  }
-  button .exit{
+}
+
+button .exit {
     font-size: 20px;
-  }
-  button .exit:hover{
+}
+
+button .exit:hover {
     color: #7B555A;
-  }
+}
+
+.button {
+    position: relative;
+    right: -335px;
+    top: 10px;
+}
+
+.button .bt-buy,
+.button .bt-cart {
+    font-size: 18px;
+    font-weight: 600;
+    color: #E45641;
+    background-color: #ecc7bf;
+}
+
+.button .bt-buy {
+    padding: 4px 23px;
+}
+
+.button .bt-cart {
+    padding: 7px 20px 6px 0;
+    margin: 0px -5px;
+}
+
+.button .bt-buy:hover,
+.button .bt-cart:hover {
+    background-color: #E3AEB4;
+    transition: 0.5s;
+}

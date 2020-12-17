@@ -7,9 +7,10 @@
    <meta charset="utf-8">
    <link href="css/clotheList.css"  rel="stylesheet">
    <script src="js/checkAccount.js"></script> 
-   <%-- <script src="js/cart.js"></script> --%>
    <script src="js/cart.js"></script>
-   <title>ANGELSHOP</title>
+   <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/aside.js"></script>
+   <title>商品分类显示-ANGELSHOP</title>
    <link rel="icon" href="logo.png">
    <base target="_blank">   
   </head>
@@ -26,7 +27,7 @@
       <a href="register.html">注册</a>
     </span>
       |
-      <a href="index.html">首页</a>
+      <a href="listClothes.do">首页</a>
       |
       <a href="listCart.do">我的购物车</a>
       |
@@ -46,33 +47,25 @@
       </form>
     </div>
  </nav>
-   <aside>
-    <ul>
-      <li>发饰
-        <ul>
-          <li><a href="listClothesByType.do?type=皇冠">皇冠</a></li>
-          <li><a href="listClothesByType.do?type=发箍">发箍</a></li>
-          <li><a href="listClothesByType.do?type=礼帽">礼帽</a></li>
+  <aside>
+        <!-- <img src="images/ban_01.jpg" alt="" class="banner"> -->
+        <ul class="type01">发&nbsp;&nbsp;饰
+            <li><a href="listClothesByType.do?type=皇冠">皇冠</a></li>
+            <li><a href="listClothesByType.do?type=发箍">发箍</a></li>
+            <li><a href="listClothesByType.do?type=礼帽">礼帽</a></li>
         </ul>
-      </li>
-      <li>服装
-        <ul>
-          <li><a href="listClothesByType.do?type=长款服装">长款服装</a></li>
-          <li><a href="listClothesByType.do?type=短款服装">短款服装</a></li>
-          <li><a href="listClothesByType.do?type=汉服旗袍">汉服旗袍</a></li>
+        <ul class="type02">服&nbsp;&nbsp;装
+            <li><a href="listClothesByType.do?type=长款服装">长款服装</a></li>
+            <li><a href="listClothesByType.do?type=短款服装">短款服装</a></li>
+            <li><a href="listClothesByType.do?type=汉服旗袍">汉服旗袍</a></li>
         </ul>
-      </li>
-      <li>配饰
-        <ul>
-          <li><a href="listClothesByType.do?type=裙撑">裙撑</a></li>
-          <li><a href="listClothesByType.do?type=披肩">披肩</a></li>
-          <li><a href="listClothesByType.do?type=权杖">权杖</a></li>
-          <li><a href="listClothesByType.do?type=耳环">耳环</a></li>
-          <li><a href="listClothesByType.do?type=颈链">颈链</a></li>
-
+        <ul class="type03">配&nbsp;&nbsp;饰
+            <li><a href="listClothesByType.do?type=裙撑">裙撑</a></li>
+            <li><a href="listClothesByType.do?type=披肩">披肩</a></li>
+            <li><a href="listClothesByType.do?type=权杖">权杖</a></li>
+            <li><a href="listClothesByType.do?type=耳环">耳环</a></li>
+            <li><a href="listClothesByType.do?type=颈链">颈链</a></li>
         </ul>
-      </li>
-    </ul>
     </aside>
 
     <main>
@@ -106,7 +99,7 @@
            <span><%=clothes.getDeliveryTime()%></span>	 
         </div>
         <div class="button">
-          <a class="bt-buy" href="toBuy.do">立即购买</a>
+          <a class="bt-buy" href="checkout.do?clotheID=<%=clothes.getClotheID()%>">立即购买</a>
           <a class='bt-cart iconfont' href="javascript:void(0);" onclick="addToCart(<%=clothes.getClotheID()%>,'<%=clothes.getClotheName()%>')">&#xe674;&nbsp;加入购物车</a>  
         </div>
       </div>
@@ -133,7 +126,7 @@
 	 %>
     </main> 
     <footer>	  
-      <a href="index.html">首页</a>|
+      <a href="listClothes.do">首页</a>|
       <a href="#">帮助</a>|
       <a href="#">我的帐户</a>|
       <a href="#">我的购物车</a>|

@@ -6,7 +6,7 @@
    <link href="css/afterAdddToCart.css"    rel="stylesheet"> 
    <script src="js/checkAccount.js"></script> 
    <script src="js/cart.js"></script>
-   <title>ANGELSHOP</title>   
+   <title>加入购物结果页-ANGELSHOP</title>   
    <link rel="icon" href="logo.png"> <!--设置网页小图标-->
    <base target="_blank">
   </head>
@@ -23,7 +23,7 @@
         <a href="register.html">注册</a>
       </span>
         |
-        <a href="index.html">首页</a>
+        <a href="listClothes.do">首页</a>
         |
         <a href="listCart.do">我的购物车</a>
         |
@@ -43,35 +43,6 @@
         </form>
       </div>
    </nav>
-   <!-- 设置页面的侧栏，实现分类展示 -->
-   <aside>
-      <ul>
-        <li>发饰
-          <ul>
-            <li><a href="listClothesByType.do?type=皇冠">皇冠</a></li>
-            <li><a href="listClothesByType.do?type=发箍">发箍</a></li>
-            <li><a href="listClothesByType.do?type=礼帽">礼帽</a></li>
-          </ul>
-        </li>
-        <li>服装
-          <ul>
-            <li><a href="listClothesByType.do?type=长款服装">长款服装</a></li>
-            <li><a href="listClothesByType.do?type=短款服装">短款服装</a></li>
-            <li><a href="listClothesByType.do?type=汉服旗袍">汉服旗袍</a></li>
-          </ul>
-        </li>
-        <li>配饰
-          <ul>
-            <li><a href="listClothesByType.do?type=裙撑">裙撑</a></li>
-            <li><a href="listClothesByType.do?type=披肩">披肩</a></li>
-            <li><a href="listClothesByType.do?type=权杖">权杖</a></li>
-            <li><a href="listClothesByType.do?type=耳环">耳环</a></li>
-            <li><a href="listClothesByType.do?type=颈链">颈链</a></li>
-
-          </ul>
-        </li>
-      </ul>
-    </aside>
 
     <main>
         <%
@@ -81,7 +52,7 @@
             String clotheName=(String)request.getAttribute("clotheName");
              %>	  
                <p>商品<a href="getClothesById.do?clotheID=<%=clotheID%>"><%=clotheName%></a>已成功加入购物车！<br><br>
-               <a href='order.do' class='list-cart'>去购物车结算></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您还可以<a  class='continue-buy' href='javascript:location.href=document.referrer;'>继续购物></a></p>
+               <a href='listCart.do' class='list-cart'>去购物车结算></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;您还可以<a  class='continue-buy' href='listClothes.do'>继续购物></a></p>
              <%
                  }else{
              %>
@@ -94,7 +65,7 @@
             
     <!-- 设置页面尾部 -->
     <footer>	  
-      <a href="index.html">首页</a>|
+      <a href="listClothes.do">首页</a>|
       <a href="#">帮助</a>|
       <a href="#">我的帐户</a>|
       <a href="#">我的购物车</a>|

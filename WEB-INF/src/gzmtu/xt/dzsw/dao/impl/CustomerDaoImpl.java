@@ -9,7 +9,7 @@ public class CustomerDaoImpl implements ICustomerDao{
       Connection conn=JDBCUtil.getConnection();
       PreparedStatement pstmt=null;          
       String sql="insert into customer values(?,?,?,?)" ;	
-	  String md5Pwd=Md5Util.md5(customer.getPwd());
+	    String md5Pwd=Md5Util.md5(customer.getPwd());//密码加密
       boolean result=false;
       try{
         pstmt=conn.prepareStatement(sql); 
@@ -18,10 +18,10 @@ public class CustomerDaoImpl implements ICustomerDao{
         pstmt.setString(3,customer.getPhone()); 
         pstmt.setString(4,customer.getAddress());		
         if(pstmt.executeUpdate()==1){
-			result=true;
-	}             
+          result=true;
+	      }             
       }catch(Exception e){
-		  e.printStackTrace();
+        e.printStackTrace();
 	  }finally{
 		  JDBCUtil.close(pstmt,conn);
 	  }
@@ -30,23 +30,23 @@ public class CustomerDaoImpl implements ICustomerDao{
    public boolean login(String account,String pwd){
       Connection conn=JDBCUtil.getConnection();
       PreparedStatement pstmt=null;  
-	  ResultSet rs=null;
+	    ResultSet rs=null;
       String sql="select * from customer where account=? and pwd=?";      
       boolean result=false;
-	  try{
+	    try{
         pstmt=conn.prepareStatement(sql);
         pwd=Md5Util.md5(pwd); 
         pstmt.setString(1,account); 
         pstmt.setString(2,pwd);
         rs=pstmt.executeQuery();
         if(rs.next()){		
-		   result=true;
+          result=true;
         }
-	  }catch(Exception e){
-		  e.printStackTrace();
-	  }finally{
+	    }catch(Exception e){
+        e.printStackTrace();
+	    }finally{
 		  JDBCUtil.close(rs,pstmt,conn);
-	  }
+	    } 
       return result;
   }
 }

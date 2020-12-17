@@ -1,3 +1,0 @@
-<Context path="angelshop" docBase="d:/angelshop/" reloadable="true" workDir="d:/angelshop/work"/>
-账号：wxl
-密码：123456

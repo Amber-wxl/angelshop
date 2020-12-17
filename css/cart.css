@@ -1,39 +1,65 @@
 @import "common.css";
-aside,
-main{
-    height: 340px;
+main {
+    margin-left: 5px;
 }
-table{
+
+main .emptyCart {
+    float: left;
+}
+
+main p {
+    padding: 28px;
+    margin-left: 150px;
+}
+
+.prompt {
+    padding: 0px;
+    margin-left: 10px;
+}
+
+main a {
+    padding: 77px;
+}
+
+table {
     margin: 28px;
 }
-table tr{
+
+table tr {
     padding: 10px 2px;
 }
-table td{
-    padding: 15px 20px;
+
+table td {
+    padding: 5px 10px;
     text-align: center;
 }
-a img{
+
+a img {
     width: 100px;
     height: auto;
 }
-form p{
-    float: right;
-}
-form p input{
-    border: 1px solid ;
+
+form input {
+    border: 1px solid;
     background-color: transparent;
     padding: 3px 18px;
     font-weight: 800;
     font-size: 16px;
 }
-form p input:hover{
+
+form p input:hover {
     background-color: #E3AEB4;
 }
-.changeQuantity{
+
+.changeQuantity {
     text-align: center;
 }
 
-.down,.up{
+.checkoutInfo {
+    padding-left: 700px;
+}
+
+.down,
+.up {
     padding: 2px;
 }

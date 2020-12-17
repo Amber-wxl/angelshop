@@ -1,0 +1,56 @@
+main>form label:nth-of-type(n+5),
+main>form label:nth-of-type(2),
+main>form label:nth-of-type(3) {
+    padding-left: 10px;
+}
+
+.order-submit {
+    position: relative;
+    height: 100px;
+    width: 900px;
+}
+
+.order-submit img {
+    width: 100px;
+}
+
+.order-submit span:nth-of-type(2) {
+    position: relative;
+    left: 0;
+    top: -80px;
+}
+
+.order-submit span:nth-of-type(2) a {
+    font-size: 18px;
+    line-height: 20px;
+}
+
+.order-submit span:nth-of-type(3) {
+    position: relative;
+    top: -80px;
+    left: 150px;
+}
+
+.order-submit span:nth-of-type(4) {
+    position: relative;
+    top: -60px;
+    left: 128px;
+}
+
+.order-submit span:nth-of-type(5) {
+    position: relative;
+    left: 34px;
+    top: 0;
+}
+
+main p {
+    font-size: 16px;
+    padding: 20px 0 0 567px;
+}
+
+input[type="submit"] {
+    padding: 5px;
+    position: relative;
+    left: 760px;
+    top: 5px;
+}
