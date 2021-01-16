@@ -7,8 +7,8 @@ import java.sql.*;
 import java.util.*;
 import java.time.LocalDate;
 public class CartDaoImpl implements ICartDao{
-	public boolean addToCart(Cart cart){
-      Connection conn=JDBCUtil.getConnection();
+	public boolean addToCart(Cart cart){// 加入购物车功能
+      Connection conn=JDBCUtil.getConnection();//获取数据库连接
       PreparedStatement pstmt=null;
       ResultSet rs=null;	
 	   boolean result=false;
@@ -17,7 +17,7 @@ public class CartDaoImpl implements ICartDao{
 		   pstmt=conn.prepareStatement(sql);
 		   pstmt.setString(1,cart.getAccount());
 		   pstmt.setInt(2,cart.getClotheID());
-            rs=pstmt.executeQuery();
+         rs=pstmt.executeQuery();
             if(rs.next()){	
                //如果sql执行结果不为空，则该用户购物车中已有该商品，此时不用插入一条新记录到购物车，只需在原来的+1
                int cartID=rs.getInt(1);				  
@@ -26,9 +26,9 @@ public class CartDaoImpl implements ICartDao{
 		         pstmt.setObject(1,cart.getUpdateTime());
 			      pstmt.setInt(2,cartID);
 			      System.out.println(pstmt);
-		   }else{			
-            //如果执行结果为空，则插入记录
-               sql="insert into cart values(null,?,?,1,?,?)";
+		      }else{			
+               //如果执行结果为空，则插入记录
+               sql="insert into cart values(null,?,?,1,?,?)";//quantity=1
                pstmt=conn.prepareStatement(sql);
 			      pstmt.setInt(1,cart.getClotheID());
 		         pstmt.setString(2,cart.getAccount());		     
@@ -37,16 +37,13 @@ public class CartDaoImpl implements ICartDao{
 		   }
          pstmt.executeUpdate();
 		   result=true;
-      }catch(Exception e){
-         e.printStackTrace();
-      }finally{
-         JDBCUtil.close(rs,pstmt,conn);	    
-      }
+      }catch(Exception e){ e.printStackTrace(); }
+      finally{ JDBCUtil.close(rs,pstmt,conn); }
       return result;
 	}
 
-	public List<Cart> getCartsByAccount(String account){
-      Connection conn=JDBCUtil.getConnection();
+	public List<Cart> getCartsByAccount(String account){// 通过用户名查询购物车内容
+      Connection conn=JDBCUtil.getConnection();//获取数据库连接
       PreparedStatement pstmt=null;
       ResultSet rs=null;	  
       String sql="select cart.clotheID,cart.quantity,clothes.clotheName,clothes.cover,clothes.price,clothes.discount from cart inner join clothes on clothes.clotheID=cart.clotheID where cart.account=? order by cart.updateTime desc";	  
@@ -56,8 +53,8 @@ public class CartDaoImpl implements ICartDao{
 	   try{
          pstmt=conn.prepareStatement(sql);
 		   pstmt.setString(1,account);          
-         rs=pstmt.executeQuery();        
-         while(rs.next()){
+         rs=pstmt.executeQuery();   
+         while(rs.next()){//通过while循环将sql执行的结果遍历
 			clothe=new Clothes();
 			clothe.setClotheName(rs.getString("clotheName"));
 			clothe.setCover(rs.getString("cover"));
@@ -67,17 +64,14 @@ public class CartDaoImpl implements ICartDao{
 			cart.setClotheID(rs.getInt("clotheID"));
 			cart.setQuantity(rs.getInt("quantity"));
          cart.setClothe(clothe);
-         cartList.add(cart);
+         cartList.add(cart);//将cart对象作为数组的一个元素添加到cartList数组里
          }
-       }catch(Exception e){
-          e.printStackTrace();
-       }finally{
-          JDBCUtil.close(rs,pstmt,conn);	    
-      }
+      }catch(Exception e){ e.printStackTrace(); }
+      finally{ JDBCUtil.close(rs,pstmt,conn); }
       return cartList;
    }
-   public boolean deleteFromCart(Cart cart){
-      Connection conn=JDBCUtil.getConnection();
+   public boolean deleteFromCart(Cart cart){// 删除购物车
+      Connection conn=JDBCUtil.getConnection();//获取数据库连接
       PreparedStatement pstmt=null;     
 	   boolean result=false;
 	   String sql="delete from cart where clotheID=? and account=?"; 	  
@@ -85,19 +79,14 @@ public class CartDaoImpl implements ICartDao{
 		   pstmt=conn.prepareStatement(sql);		 
 		   pstmt.setInt(1,cart.getClotheID());  
 		   pstmt.setString(2,cart.getAccount()); 
-         if(pstmt.executeUpdate()==1){//executeUpdate()函数的返回结果是sql语句执行后影响的记录数量
-		      result=true;
-		   }
-      }catch(Exception e){
-         e.printStackTrace();
-      }finally{
-         JDBCUtil.close(pstmt,conn);	    
-      }
+         if(pstmt.executeUpdate()==1){ result=true; }//影响行数为 1
+      }catch(Exception e){  e.printStackTrace(); }
+      finally{ JDBCUtil.close(pstmt,conn); }
       return result;
    }
 
-   public boolean updateCart(Cart cart){
-      Connection conn=JDBCUtil.getConnection();
+   public boolean updateCart(Cart cart){ // 更新购物车
+      Connection conn=JDBCUtil.getConnection();//获取数据库连接
       PreparedStatement pstmt=null;     
 	   boolean result=false;
 	   String sql="update cart set quantity=?,updateTime=? where clotheID=? and account=?"; 	  
@@ -107,19 +96,14 @@ public class CartDaoImpl implements ICartDao{
 		   pstmt.setObject(2,cart.getUpdateTime());
 		   pstmt.setInt(3,cart.getClotheID());
 		   pstmt.setString(4,cart.getAccount());
-          if(pstmt.executeUpdate()==1){
-		      result=true;
-		   }
-      }catch(Exception e){
-         e.printStackTrace();
-      }finally{
-         JDBCUtil.close(pstmt,conn);	    
-      }
+         if(pstmt.executeUpdate()==1){ result=true; }//影响行数为1，则result=true
+      }catch(Exception e){ e.printStackTrace(); }
+      finally{ JDBCUtil.close(pstmt,conn); }
       return result;
    }
 
    public List<Cart> getCartsByAccountAndClotheIDs(String account,String[] clotheIDs){
-      Connection conn=JDBCUtil.getConnection();	 
+      Connection conn=JDBCUtil.getConnection();	//获取数据库连接 
       PreparedStatement pstmt=null;
       ResultSet rs=null;		 
 	   StringBuilder sb = new StringBuilder();	 
@@ -146,13 +130,8 @@ public class CartDaoImpl implements ICartDao{
             cart.setClothe(clothe);
             cartList.add(cart);
          }
-      }catch(Exception e){
-          e.printStackTrace();
-      }finally{
-          JDBCUtil.close(rs,pstmt,conn);	    
-      }
+      }catch(Exception e){ e.printStackTrace(); }
+      finally{ JDBCUtil.close(rs,pstmt,conn); }
       return cartList;
    }
-   
-
 }

@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>添加商品</title>
+    <link rel="icon" href="logo.png">
+    <link rel="stylesheet" href="css/manage.css">
+    <link rel="stylesheet" href="css/addProduct.css">
+    <script src="js/checkAdmin.js"></script>
+    <script src="js/setReturnUrl.js"></script>
+    <script src="js/jquery-3.5.1.min.js"></script>
+    <script src="js/aside.js"></script>
+</head>
+
+<body>
+    <header>
+        <img src="./images/logo.png" alt="">
+        <span></span>
+        <i>后台管理系统</i>
+    </header>
+    <aside>
+        <ul>
+            <li>
+                <span>商品管理<span class="iconfont xiala">&#xe662;</span></span>
+                <div>
+                    <ul>
+                        <li><a href="manageProductList.do"> 商品列表</a></li>
+                        <li class="active"><a href="addProduct.html" target="_blank">添加商品</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li>
+                <span>订单管理<span class="iconfont xiala">&#xe662;</span></span>
+                <div class="hide">
+                    <ul>
+                        <li><a href="manageOrderList.do"> 订单列表</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li>
+                <span>用户管理<span class="iconfont xiala">&#xe662;</span></span>
+                <div class="hide">
+                    <ul>
+                        <li><a href="manageUserList.do"> 用户列表</a></li>
+                        <li><a href="">管理员列表</a></li>
+                        <li><a href="" target="_blank">管理员注册</a></li>
+                    </ul>
+                </div>
+            </li>
+
+        </ul>
+    </aside>
+    <main>
+        <div class="addForm">
+            <h3>添加商品</h3>
+            <form action="addProduct.do" method="post" enctype="multipart/form-data" target="_self">
+                <label><span class="iconfont icon">&#xe635;</span>商品名称：</label>
+                <input type="text" name="clotheName" placeholder="请输入商品名称">
+                <br>
+                <label><span class="iconfont icon">&#xe635;</span>发货地点：</label>
+                <select name="origin">
+               <option value="广东广州" selected>广东-广州</option>
+               <option value="江苏苏州">江苏-苏州</option>
+               <option value="浙江温州">浙江-温州</option>
+            </select>
+                <br>
+                <label><span class="iconfont icon">&#xe635;</span>风&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格：</label>
+                <select name="style">
+                <option value="公主" selected>公主</option>
+                <option value="礼服">礼服</option>
+            </select>
+                <br>
+                <label><span class="iconfont icon">&#xe635;</span>颜&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;色：</label>
+                <select name="color">
+                <option value="粉色" selected>粉色</option>
+                <option value="蓝色">蓝色</option>
+                <option value="金色">金色</option>
+                <option value="红色">红色</option>
+                <option value="白色">白色</option>
+                <option value="香槟色">香槟色</option>
+            </select>
+                <br>
+                <label><span class="iconfont icon">&#xe635;</span>发货时间：</label>
+                <select name="deliveryTime">
+                <option value="当天发货" selected>当天发货</option>
+                <option value="7天内发货">7天内发货</option>
+                <option value="15天内发货">7天内发货</option>
+            </select>
+                <br>
+                <label><span class="iconfont icon">&#xe635;</span>价&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;格：</label>
+                <input type="text" name="price">
+                <br>
+                <label><span class="iconfont icon">&#xe635;</span>折&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;扣：</label>
+                <input type="text" name="discount">
+                <br>
+                <label><span class="iconfont icon">&#xe635;</span>封面图片：</label>
+                <input type="file" name="cover">
+                <br>
+                <label><span class="iconfont icon">&#xe635;</span>所属类目：</label>
+                <select name="type">
+                <option value="长款服装" selected>长款服装</option>
+                <option value="短款服装">短款服装</option>
+                <option value="汉服旗袍">汉服旗袍</option>
+                <option value="皇冠">皇冠</option>
+                <option value="发箍">发箍</option>
+                <option value="礼帽">礼帽</option>
+                <option value="裙撑">裙撑</option>
+                <option value="披肩">披肩</option>
+                <option value="权杖">权杖</option>
+                <option value="耳环">耳环</option>
+                <option value="颈链">颈链</option>
+            </select>
+                <br>
+                <label><span class="iconfont icon">&#xe635;</span>详&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;情：</label>
+                <textarea name="content" cols="50" rows="3"></textarea>
+                <br>
+                <input type="hidden" name="returnUrl">
+                <input type="submit" value="提交">
+            </form>
+        </div>
+    </main>
+
+</body>
+
+</html>

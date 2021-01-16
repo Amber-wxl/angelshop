@@ -1,9 +1,7 @@
 <%@page contentType="text/html;charset=utf-8"%>
-<%@page import="java.util.List,java.util.ArrayList,java.time.LocalDateTime,gzmtu.xt.dzsw.entity.Order"%>
-
+<%@page import="java.util.List,java.util.ArrayList,gzmtu.xt.dzsw.entity.*"%>
 <!doctype html>
 <html>
-
 <head>
     <meta charset="utf-8">
     <!--设置网页编码方式-->
@@ -18,8 +16,6 @@
     <!--设置网页标题-->
     <link rel="icon" href="logo.png">
     <!--设置网页小图标-->
-    <base target="_blank">
-    <!--所有的超链接都在一个新的页面打开-->
 </head>
 
 <body>
@@ -29,21 +25,17 @@
     <nav>
         <!--登录注册等操作选项-->
         <div class="action">
-            <span>
-            <a href="login.html">登录</a>
-            |
-            <a href="register.html">注册</a>
-            </span> |
-            <a href="listClothes.do">首页</a> |
-            <a href="listCart.do">我的购物车</a> |
-            <a href="listOrder.do">我的订单</a>
+            <span><a href="login.html" target="_blank">登录</a>|<a href="register.html" target="_blank">注册</a></span>|
+            <a href="listClothes.do">首页</a>|
+            <a href="listCart.do" target="_blank">我的购物车</a>|
+            <a href="listOrder.do" target="_blank">我的订单</a>
         </div>
 
         <!-- 搜索框提交表单 -->
         <div class="search">
             <form action="searchClothes.do" method="get">
                 <input type="search" name="value" size="30" required>
-                <button type="submit" class="iconfont">&#xe60e;</button>
+                <button type="submit" class="iconfont">&#xe6bf;</button>
                 <select name="category">
                     <option value="clotheName" selected>宝贝</option>
                     <option value="style">风格</option>
@@ -53,55 +45,33 @@
         </div>
     </nav>
 
-   
-
     <main>
     <%
-	  List<Order> orderList=(ArrayList<Order>)request.getAttribute("orderlist");
-		if(orderList.isEmpty()){
-      out.println("<p>没有订单！</p><a href='listCart.do'>去购物车结算>></a>");
-		}else{
-		%>
-    <p class="prompt">订单信息</p>
-      <table id='cart'>
-        <tr class='thead'>
-          <th width='20%'>订单号</th>
-          <th width='20%'>实付款</th>
-          <th width='10%'>支付方式</th>
-          <th width='10%'>发货方式</th>
-          <th width='20%'>下单时间</th>
-          <th width='20%'>订单状态</th>
-
-        </tr>
-    <%
-	    String orderID;
-	    double total=0;
-		String deliverWay;
-		String paymentWay;
-		LocalDateTime orderTime;
-        String orderState;
+	    List<Order> orderList=(ArrayList<Order>)request.getAttribute("orderList");
+		List<Suborder> suborderList;
+		String orderID;
+		Clothes clothe;
+		StringBuilder  sb;
 		for(Order order:orderList){
-		    orderID=order.getOrderID();	
-            total=order.getTotal();
-            deliverWay=order.getDeliverWay();
-            paymentWay=order.getPaymentWay();
-            orderTime=order.getOrderTime();
-            orderState=order.getOrderState();			  		 
-	%>
-        <tr>
-          <td><a href="getOrder.do?orderID=<%=orderID%>"><%=orderID%></a></td>
-          <td>￥<%=total%></td>
-          <td><%=deliverWay%></td>
-          <td><%=paymentWay%></td>
-          <td><%=orderTime%></td>
-          <td><%=orderState%></td>
-        </tr>
-    <%
+			orderID=order.getOrderID();
+			suborderList=order.getSuborderList();
+			sb=new StringBuilder();
+			for(Suborder suborder:suborderList){
+			clothe=suborder.getClothe();
+            sb.append("<div class='suborder'><a href='getClothe.do?clotheID=").append(clothe.getClotheID()).append("'><img src='").append(clothe.getCover()).append("'></a>").append("<span>").append(clothe.getClotheName()).append("</span><span>￥").append(clothe.getPrice()).append("</span><span>×").append(suborder.getCount()).append("</span></div>");
 		}
 	%>
-    </table>
+     <div class="order-box">
+     <span class="orderID">订单号：</span><a href="getOrderById.do?orderID=<%=orderID%>"><%=orderID%></a>
+     <span class="orderState"><%=order.getOrderState()%></span>
+     <%=sb%>
+     <span class="total">实付款：<%=order.getTotal()%></span>
+     <span class="paymentway">付款方式：<%=order.getPaymentWay()%></span>
+     <span class="deliveryway">发货方式：<%=order.getDeliverWay()%></span>
+     <span class="ordertime">下单时间：<%=order.getOrderTime()%></span>
+     </div>  
     <%
-      }
+        }
     %>
     </main>
 

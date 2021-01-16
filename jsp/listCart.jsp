@@ -14,8 +14,6 @@
     <!--设置网页标题-->
     <link rel="icon" href="logo.png">
     <!--设置网页小图标-->
-    <base target="_blank">
-    <!--所有的超链接都在一个新的页面打开-->
 </head>
 <body>
  <!--头部背景图由css样式控制-->
@@ -24,27 +22,23 @@
     <nav>
         <!--登录注册等操作选项-->
         <div class="action">
-            <span>
-        <a href="login.html">登录</a>
-        |
-        <a href="register.html">注册</a>
-      </span> |
-            <a href="listClothes.do">首页</a> |
-            <a href="listCart.do">我的购物车</a> |
-            <a href="listOrder.do">我的订单</a>
+          <span><a href="login.html" target="_blank">登录</a>|<a href="register.html" target="_blank">注册</a></span>|
+          <a href="listClothes.do">首页</a>|
+          <a href="listCart.do" target="_blank">我的购物车</a>|
+          <a href="listOrder.do" target="_blank">我的订单</a>
         </div>
 
         <!-- 搜索框提交表单 -->
         <div class="search">
-            <form action="searchClothes.do" method="get">
-                <input type="search" name="value" size="30" required>
-                <button type="submit" class="iconfont">&#xe60e;</button>
-                <select name="category">
-          <option value="clotheName" selected>宝贝</option>
-          <option value="style">风格</option>
-          <option value="color">颜色</option>
-        </select>
-            </form>
+          <form action="searchClothes.do" method="get">
+            <input type="search" name="value" size="30" required>
+            <button type="submit" class="iconfont">&#xe6bf;</button>
+            <select name="category">
+              <option value="clotheName" selected>宝贝</option>
+              <option value="style">风格</option>
+              <option value="color">颜色</option>
+            </select>
+          </form>
         </div>
     </nav>
   
@@ -54,7 +48,7 @@
 		if(cartList.isEmpty()){
       out.println("<div class='emptyCart'><img src='images/cart.png'/></div><p>购物车空空如也</p><a href='listClothes.do'>去选购>></a>");
 		}else{
-		%>
+	%>
     <p class="prompt">你购物车中的购物情况如下</p>
     <form action="checkout.do" method="get">
       <table id='cart'>
@@ -100,7 +94,6 @@
           </td>
           <td class="subtotal" id="<%=(clotheID+"total")%>"><%=subtotal%></td>
           <td><button class="remove" type='button' clotheid="<%=clotheID%>">删除</button></td>
-           <%-- onclick='return confirm("你确认要从购物车中删除该宝贝吗?");' --%>
         </tr>
     <%
 		  }

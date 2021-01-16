@@ -17,8 +17,6 @@
     <!--设置网页标题-->
     <link rel="icon" href="logo.png">
     <!--设置网页小图标-->
-    <base target="_blank">
-    <!--所有的超链接都在一个新的页面打开-->
 </head>
 
 <body>
@@ -28,21 +26,17 @@
     <nav>
         <!--登录注册等操作选项-->
         <div class="action">
-            <span>
-            <a href="login.html">登录</a>
-            |
-            <a href="register.html">注册</a>
-            </span> |
-            <a href="listClothes.do">首页</a> |
-            <a href="listCart.do">我的购物车</a> |
-            <a href="listOrder.do">我的订单</a>
+            <span><a href="login.html" target="_blank">登录</a>|<a href="register.html" target="_blank">注册</a></span>|
+            <a href="listClothes.do">首页</a>|
+            <a href="listCart.do" target="_blank">我的购物车</a>|
+            <a href="listOrder.do" target="_blank">我的订单</a>
         </div>
 
         <!-- 搜索框提交表单 -->
         <div class="search">
             <form action="searchClothes.do" method="get">
                 <input type="search" name="value" size="30" required>
-                <button type="submit" class="iconfont">&#xe60e;</button>
+                <button type="submit" class="iconfont">&#xe6bf;</button>
                 <select name="category">
                     <option value="clotheName" selected>宝贝</option>
                     <option value="style">风格</option>
@@ -93,6 +87,7 @@
       <span>￥<%=sitePrice%></span>
      <span>×<%=quantity%></span>
      <span>小计：<%=subtotal%></span>
+     </div>
 	 <%
 		 }
     %>

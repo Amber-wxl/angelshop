@@ -1,0 +1,25 @@
+form {
+    margin-top: 45px;
+    font-size: 18px;
+}
+
+form label {
+    padding-right: 10px;
+    margin-right: 10px;
+}
+
+select {
+    margin: 10px;
+    padding: 5px;
+    border-radius: 5px;
+}
+
+table {
+    text-align: center;
+}
+
+input[type="submit"] {
+    margin: 20px;
+    padding: 3px 20px;
+    border-radius: 5px;
+}

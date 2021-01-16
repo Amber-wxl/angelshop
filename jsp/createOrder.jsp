@@ -15,8 +15,11 @@
     <!--设置网页标题-->
     <link rel="icon" href="logo.png">
     <!--设置网页小图标-->
-    <base target="_blank">
-    <!--所有的超链接都在一个新的页面打开-->
+    <style>
+    nav .action{
+        float:none;
+    }
+    </style>
 </head>
 
 <body>
@@ -35,19 +38,6 @@
             <a href="listCart.do">我的购物车</a> |
             <a href="listOrder.do">我的订单</a>
         </div>
-
-        <!-- 搜索框提交表单 -->
-        <div class="search">
-            <form action="searchClothes.do" method="get">
-                <input type="search" name="value" size="30" required>
-                <button type="submit" class="iconfont">&#xe60e;</button>
-                <select name="category">
-                    <option value="clotheName" selected>宝贝</option>
-                    <option value="style">风格</option>
-                    <option value="color">颜色</option>
-                </select>
-            </form>
-        </div>
     </nav>
 
     <main>
@@ -55,7 +45,7 @@
 	    String orderID=(String)request.getAttribute("orderID");
 		if(orderID!=null){				
 	 %>	  
-	 <p>尊敬的用户您好,感谢你提交订单,您的订单编号为<a href="getOrder.do?orderID=<%=orderID%>"><%=orderID%></a>,我们将及时为您处理!</p>
+	 <p>尊敬的用户您好,感谢你提交订单,您的订单编号为<a href="getOrderById.do?orderID=<%=orderID%>"><%=orderID%></a>,我们将及时为您处理!</p>
 	 <%
 		}else{
 	 %>

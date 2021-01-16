@@ -10,7 +10,7 @@ public interface ICartDao{
 	// 删除购物车
 	public abstract boolean deleteFromCart(Cart cart);
 	// 更新购物车
-	public abstract boolean updateCart(Cart  cart);
+	public abstract boolean updateCart(Cart cart);
 	// 通过用户名和商品ID查询购物车
 	public abstract List<Cart> getCartsByAccountAndClotheIDs(String account,String[] clotheIDs);
 

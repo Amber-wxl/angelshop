@@ -3,12 +3,11 @@
 <html>
   <head>
    <meta charset="utf-8">
-   <link href="css/afterAdddToCart.css"    rel="stylesheet"> 
+   <link href="css/afterAdddToCart.css" rel="stylesheet"> 
    <script src="js/checkAccount.js"></script> 
    <script src="js/cart.js"></script>
    <title>加入购物结果页-ANGELSHOP</title>   
    <link rel="icon" href="logo.png"> <!--设置网页小图标-->
-   <base target="_blank">
   </head>
   <body>
     <!--头部背景图由css样式控制-->
@@ -17,33 +16,25 @@
     <nav>
       <!--登录注册等操作选项-->
       <div class="action">
-      <span>
-        <a href="login.html">登录</a>
-        |
-        <a href="register.html">注册</a>
-      </span>
-        |
-        <a href="listClothes.do">首页</a>
-        |
-        <a href="listCart.do">我的购物车</a>
-        |
-        <a href="listOrder.do">我的订单</a>
-      </div>
+      <span><a href="login.html" target="_blank">登录</a>|<a href="register.html" target="_blank">注册</a></span>|
+      <a href="listClothes.do">首页</a>|
+      <a href="listCart.do" target="_blank">我的购物车</a>|
+      <a href="listOrder.do" target="_blank">我的订单</a>
+    </div>
 
       <!-- 搜索框提交表单 -->
       <div class="search">
-        <form action="searchClothes.do" method="get">  
-          <input type="search" name="value" size="30" required>
-          <button type="submit" class="iconfont">&#xe60e;</button>
-	        <select name="category">
-	          <option value="clotheName" selected>宝贝</option>
-            <option value="style">风格</option>
-            <option value="color">颜色</option>
-	        </select>	  
-        </form>
-      </div>
+      <form action="searchClothes.do" method="get">
+        <input type="search" name="value" size="30" required>
+        <button type="submit" class="iconfont">&#xe6bf;</button>
+        <select name="category">
+          <option value="clotheName" selected>宝贝</option>
+          <option value="style">风格</option>
+          <option value="color">颜色</option>
+        </select>
+      </form>
+    </div>
    </nav>
-
     <main>
         <%
         boolean result=(boolean)request.getAttribute("result");
@@ -60,9 +51,7 @@
              <%
                 }
              %>	
-    </main>
-
-            
+    </main>            
     <!-- 设置页面尾部 -->
     <footer>	  
       <a href="listClothes.do">首页</a>|

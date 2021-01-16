@@ -1,0 +1,143 @@
+@font-face {
+    font-family: 'iconfont';
+    src: url('../font/iconfont.eot');
+    src: url('../font/iconfont.eot?#iefix') format('embedded-opentype'), url('../font/iconfont.woff2') format('woff2'), url('../font/iconfont.woff') format('woff'), url('../font/iconfont.ttf') format('truetype'), url('../font/iconfont.svg#iconfont') format('svg');
+}
+
+.iconfont {
+    font-family: "iconfont" !important;
+    font-size: 16px;
+    font-style: normal;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #F5A9A9;
+    height: 80px;
+    width: 100%;
+}
+
+header img {
+    height: 80px;
+    width: auto;
+    margin-left: 80px;
+}
+
+header i {
+    font-size: 26px;
+    font-weight: 800;
+    font-style: normal;
+    position: relative;
+    left: 31%;
+    top: -40%;
+}
+
+header span {
+    float: right;
+    position: relative;
+    left: -40px;
+    top: 60%;
+}
+
+aside {
+    width: 160px;
+    float: left;
+    margin: 15px;
+}
+
+aside>ul {
+    padding: 10px;
+}
+
+aside>ul>li {
+    list-style: none;
+    font-size: 20px;
+    font-weight: 600;
+    padding-top: 20px;
+}
+
+aside ul li span.xiala {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+aside ul li span {
+    cursor: pointer;
+}
+
+.hide {
+    display: none;
+}
+
+aside ul li div ul {
+    padding: 10px 10px 0 10px;
+}
+
+aside ul li div ul {
+    padding: 10px;
+}
+
+aside ul li div ul li {
+    list-style: none;
+    padding: 3px 10px;
+    box-sizing: border-box;
+}
+
+aside ul li ul li a {
+    font-size: 18px;
+    font-weight: 400;
+    text-decoration: none;
+    color: black;
+}
+
+aside ul li a:hover {
+    color: #775845;
+}
+
+main {
+    margin: 15px;
+    margin-left: 160px;
+}
+
+.login {
+    text-align: center;
+    width: 600px;
+    margin: 0 auto;
+    font-size: 20px;
+}
+
+.login .adminID,
+.login .pwd {
+    margin: 20px;
+}
+
+.login input {
+    font-size: 18px;
+    margin: 10px;
+    padding: 3px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    background-color: transparent;
+}
+
+.login input:focus {
+    border-radius: 5px;
+}
+
+.login input:hover {
+    color: #775845;
+}
+
+.active {
+    border-left: 3px solid #F5A9A9;
+}
+
+.active a {
+    color: #775845;
+}

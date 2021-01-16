@@ -25,12 +25,6 @@ nav {
     margin: 1px 5px;
 }
 
-aside {
-    width: 180px;
-    float: left;
-    height: auto;
-}
-
 main {
     margin-left: 200px;
     margin-top: 6px;
@@ -55,7 +49,6 @@ ul,
 li {
     text-decoration: none;
     color: #B5838D;
-    ;
     list-style: none;
 }
 
@@ -170,34 +163,62 @@ main {
     border: none;
 }
 
-aside img {
-    width: 140px;
-    padding: 0px 0 10px 10px;
+aside {
+    width: 160px;
+    float: left;
+    margin: 15px;
 }
 
-aside ul {
+aside>ul {
+    padding-left: 30px;
+}
+
+aside>ul>li {
+    list-style: none;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+aside ul li span.xiala {
+    font-size: 20px;
+    padding-left: 10px;
+}
+
+aside ul li span {
+    cursor: pointer;
+    font-size: 20px;
+}
+
+.hide {
+    display: none;
+}
+
+aside ul li div ul {
+    padding: 10px 10px 0 10px;
+}
+
+aside ul li div ul {
+    padding: 10px;
+}
+
+aside ul li div ul li {
+    list-style: none;
+    padding: 5px 0px;
+    box-sizing: border-box;
+}
+
+aside ul li div ul li a {
     font-size: 18px;
-    font-weight: bold;
-    margin-left: 51px;
+    font-weight: 400;
+    text-decoration: none;
+    padding: 3px;
 }
 
-aside ul li {
-    margin: 15px 10px;
-    line-height: 18px;
-}
-
-aside ul li ul {
-    margin-top: 10px;
-}
-
-aside ul li ul li {
-    font-weight: normal;
-    margin: 5px 15px;
-}
-
-aside ul li ul li a {
-    display: block;
-    width: 100px;
+aside ul li div ul li a:hover,
+aside ul li div ul li a:focus,
+.active {
+    color: #9B8281;
+    border-left: 3px solid;
 }
 
 
@@ -223,17 +244,4 @@ button .exit {
 
 button .exit:hover {
     color: #7B555A;
-}
-
-ul,
-li {
-    cursor: pointer;
-}
-
-ul {
-    height: 30px;
-}
-
-li {
-    display: none;
 }

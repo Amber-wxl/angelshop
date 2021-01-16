@@ -6,14 +6,15 @@ import java.io.*;
 import javax.servlet.*;
 import javax.servlet.http.*;
 import javax.servlet.annotation.*;
-@WebServlet(urlPatterns="/getOrder.do")
+@WebServlet(urlPatterns="/getOrderById.do")
+
 public class GetOrderByOrderIDServlet extends HttpServlet{    
-  public void service(HttpServletRequest request,HttpServletResponse response)throws ServletException,java.io.IOException{	  
-	  request.setCharacterEncoding("utf-8");
-	  String orderID=request.getParameter("orderID");
-	  IOrderDao dao=new OrderDaoImpl();
-	  Order order=dao.getOrderByOrderID(orderID);	      
-	  request.setAttribute("order",order);
-	  getServletContext().getRequestDispatcher("/jsp/getOrder.jsp").forward(request,response);
+    public void service(HttpServletRequest request,HttpServletResponse response)throws ServletException,java.io.IOException{	  
+	    request.setCharacterEncoding("utf-8");
+	    String orderID=request.getParameter("orderID");
+	    IOrderDao dao=new OrderDaoImpl();//创建dao对象
+	    Order order=dao.getOrderByOrderID(orderID);//调用getOrderByOrderID(orderID)方法
+	    request.setAttribute("order",order);
+	    getServletContext().getRequestDispatcher("/jsp/getOrder.jsp").forward(request,response);
 	}   
- }
+}

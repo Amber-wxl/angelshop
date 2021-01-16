@@ -11,12 +11,12 @@ import javax.servlet.annotation.*;
 @WebServlet(urlPatterns="/listCart.do")
 
 public class ListCartServlet extends HttpServlet{    
-  public void service(HttpServletRequest request,HttpServletResponse response)throws ServletException,java.io.IOException{
-	   request.setCharacterEncoding("utf-8");	
-	   String account=CookieUtil.getAccount(request);
-	   ICartDao dao=new CartDaoImpl();	    
-	   List<Cart> cartList=dao.getCartsByAccount(account);
-	   request.setAttribute("cartList",cartList);
-      getServletContext().getRequestDispatcher("/jsp/listCart.jsp").forward(request,response);
-   } 
- }
+    public void service(HttpServletRequest request,HttpServletResponse response)throws ServletException,java.io.IOException{
+	    request.setCharacterEncoding("utf-8");	
+	    String account=CookieUtil.getAccount(request);
+	    ICartDao dao=new CartDaoImpl();	    //创建dao对象
+	    List<Cart> cartList=dao.getCartsByAccount(account);//调用getCartsByAccount(account)方法
+	    request.setAttribute("cartList",cartList);
+        getServletContext().getRequestDispatcher("/jsp/listCart.jsp").forward(request,response);
+    } 
+}

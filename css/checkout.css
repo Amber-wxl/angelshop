@@ -26,21 +26,21 @@ main>form label:nth-of-type(3) {
 }
 
 .order-submit span:nth-of-type(3) {
-    position: relative;
-    top: -80px;
-    left: 150px;
+    position: absolute;
+    top: 10px;
+    left: 705px;
 }
 
 .order-submit span:nth-of-type(4) {
-    position: relative;
-    top: -60px;
-    left: 128px;
+    position: absolute;
+    top: 31px;
+    left: 735px;
 }
 
 .order-submit span:nth-of-type(5) {
-    position: relative;
-    left: 34px;
-    top: 0;
+    position: absolute;
+    left: 672px;
+    top: 80px;
 }
 
 main p {
@@ -49,8 +49,10 @@ main p {
 }
 
 input[type="submit"] {
-    padding: 5px;
+    border-radius: 5px;
+    padding: 5px 20px;
+    background-color: transparent;
     position: relative;
-    left: 760px;
-    top: 5px;
+    left: 670px;
+    top: 10px;
 }

@@ -1,0 +1,82 @@
+main {
+    margin: 15px;
+    margin-left: 160px;
+}
+
+main>a {
+    text-decoration: none;
+    color: black;
+    border: 1px solid black;
+    border-radius: 5px;
+    padding: 5px;
+    margin: 10px;
+    font-weight: 800;
+}
+
+main>a:hover {
+    color: #775845;
+}
+
+main table {
+    text-align: center;
+    margin: 10px;
+    border-collapse: collapse;
+    /*合并边框模型*/
+    border: 1px solid #bbb;
+}
+
+main table tr:nth-child(odd) {
+    background-color: #F6CECE;
+}
+
+main table tr:nth-of-type(1) {
+    font-size: 18px;
+}
+
+main table tr {
+    line-height: 30px;
+}
+
+main table td {
+    padding: 5px;
+}
+
+main table tr:nth-child(even) td {
+    border-right: 1px;
+}
+
+main table a {
+    text-decoration: none;
+    color: black;
+    font-weight: 800;
+}
+
+main table a:hover,
+main table a:focus {
+    color: #775845;
+}
+
+main table img {
+    width: 100px;
+}
+
+main table .icon {
+    padding: 5px;
+    font-size: 14px;
+}
+
+main .page {
+    text-align: center;
+    margin: 10px;
+}
+
+main .page a {
+    text-decoration: none;
+}
+
+main .page input[type="submit"] {
+    border: none;
+    background-color: transparent;
+    font-size: 16px;
+    cursor: pointer;
+}

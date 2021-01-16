@@ -1,7 +1,60 @@
-table {
-    text-align: center;
+img {
+    width: 100px;
+    padding: 5px;
 }
 
-td {
-    padding: 8px;
+.order-box {
+    width: 900px;
+    border: 1px solid;
+    margin: 5px;
+    padding: 10px;
+}
+
+.orderID,
+.order-box>a {
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.orderState {
+    float: right;
+    font-size: 18px;
+    font-weight: 600;
+}
+
+.suborder span {
+    font-size: 16px;
+    font-weight: 400;
+}
+
+.suborder span:nth-of-type(1) {
+    position: relative;
+    top: -85px;
+    left: 0;
+}
+
+.suborder span:nth-of-type(2) {
+    position: relative;
+    top: 10px;
+    left: 0;
+    float: right;
+}
+
+.suborder span:nth-of-type(3) {
+    position: relative;
+    top: 40px;
+    left: 56px;
+    float: right;
+}
+
+.total,
+.paymentway,
+.deliveryway,
+.ordertime {
+    float: right;
+    font-size: 16px;
+    padding: 5px;
+    position: relative;
+    top: -20px;
+    left: 0;
 }

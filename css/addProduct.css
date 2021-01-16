@@ -1,0 +1,42 @@
+aside {
+    height: 500px;
+}
+
+.addForm {
+    width: 100%;
+    position: relative;
+    left: 20px;
+    top: 32px;
+}
+
+.icon {
+    font-size: 20px;
+    color: red;
+    padding: 5px;
+}
+
+input,
+select,
+textarea {
+    padding: 5px;
+    margin: 10px;
+    border: 1px solid;
+    border-radius: 5px;
+}
+
+textarea {
+    position: relative;
+    left: 0;
+    top: 30px;
+}
+
+input[type="file"] {
+    border: none;
+}
+
+input[type="submit"] {
+    position: relative;
+    left: 5%;
+    top: 30px;
+    padding: 6px 30px;
+}

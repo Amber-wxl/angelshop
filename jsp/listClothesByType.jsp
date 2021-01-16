@@ -48,23 +48,41 @@
     </div>
  </nav>
   <aside>
-        <!-- <img src="images/ban_01.jpg" alt="" class="banner"> -->
-        <ul class="type01">发&nbsp;&nbsp;饰
-            <li><a href="listClothesByType.do?type=皇冠">皇冠</a></li>
-            <li><a href="listClothesByType.do?type=发箍">发箍</a></li>
-            <li><a href="listClothesByType.do?type=礼帽">礼帽</a></li>
-        </ul>
-        <ul class="type02">服&nbsp;&nbsp;装
-            <li><a href="listClothesByType.do?type=长款服装">长款服装</a></li>
-            <li><a href="listClothesByType.do?type=短款服装">短款服装</a></li>
-            <li><a href="listClothesByType.do?type=汉服旗袍">汉服旗袍</a></li>
-        </ul>
-        <ul class="type03">配&nbsp;&nbsp;饰
-            <li><a href="listClothesByType.do?type=裙撑">裙撑</a></li>
-            <li><a href="listClothesByType.do?type=披肩">披肩</a></li>
-            <li><a href="listClothesByType.do?type=权杖">权杖</a></li>
-            <li><a href="listClothesByType.do?type=耳环">耳环</a></li>
-            <li><a href="listClothesByType.do?type=颈链">颈链</a></li>
+        <ul>
+            <li>
+                <span>发&nbsp;&nbsp;饰<span class="iconfont xiala">&#xe662;</span></span>
+                <div>
+                    <ul>
+                        <li><a href="listClothesByType.do?type=皇冠">皇冠</a></li>
+                        <li><a href="listClothesByType.do?type=发箍">发箍</a></li>
+                        <li><a href="listClothesByType.do?type=礼帽">礼帽</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li>
+                <span>服&nbsp;&nbsp;装<span class="iconfont xiala">&#xe662;</span></span>
+                <div>
+                    <ul>
+                        <li><a href="listClothesByType.do?type=长款服装">长款服装</a></li>
+                        <li><a href="listClothesByType.do?type=短款服装">短款服装</a></li>
+                        <li><a href="listClothesByType.do?type=汉服旗袍">汉服旗袍</a></li>
+                    </ul>
+                </div>
+            </li>
+
+            <li>
+                <span>配&nbsp;&nbsp;饰<span class="iconfont xiala">&#xe662;</span></span>
+                <div>
+                    <ul>
+                        <li><a href="listClothesByType.do?type=裙撑">裙撑</a></li>
+                        <li><a href="listClothesByType.do?type=披肩">披肩</a></li>
+                        <li><a href="listClothesByType.do?type=权杖">权杖</a></li>
+                        <li><a href="listClothesByType.do?type=耳环">耳环</a></li>
+                        <li><a href="listClothesByType.do?type=颈链">颈链</a></li>
+                    </ul>
+                </div>
+            </li>
         </ul>
     </aside>
 
@@ -100,7 +118,7 @@
         </div>
         <div class="button">
           <a class="bt-buy" href="checkout.do?clotheID=<%=clothes.getClotheID()%>">立即购买</a>
-          <a class='bt-cart iconfont' href="javascript:void(0);" onclick="addToCart(<%=clothes.getClotheID()%>,'<%=clothes.getClotheName()%>')">&#xe674;&nbsp;加入购物车</a>  
+          <a class='bt-cart iconfont' href="javascript:void(0);" target="_self" onclick="addToCart(<%=clothes.getClotheID()%>,'<%=clothes.getClotheName()%>')">&#xe674;&nbsp;加入购物车</a>  
         </div>
       </div>
 	 <%
@@ -111,19 +129,18 @@
 	    String type=(String)request.getAttribute("type");
 	    String previous=curPage<=1?"&nbsp;&nbsp;":"<a href='listClothesByType.do?type="+type+"&page="+(curPage-1)+"'><</a>";
        String next=curPage>=pages?"&nbsp;&nbsp;":"<a href='listClothesByType.do?type="+type+"&page="+(curPage+1)+"'>></a>";
-	 %>
-
+	  %>
 	 <p class="page-nav"><%=previous%>&nbsp;&nbsp;<%=curPage%>&nbsp;&nbsp;<%=next%></p>
 	 <form action="listClothesByType.do"  method='get'>
 	    <label>共<%=pages%>页,到第</label>
 		<input type='hidden' name='type' value='<%=type%>'>
 		<input type='text' name='page' size='1'>		
 		<label>页&nbsp;&nbsp;</label>
-		<input type='submit'  value= '前往' ><span class="iconfont">&#xe6b7;</span>
+		<input type='submit'  value= '前往' ><span class="iconfont">&#xe61b;</span>
 	</form>
 	<%
 	  }
-	 %>
+	%>
     </main> 
     <footer>	  
       <a href="listClothes.do">首页</a>|

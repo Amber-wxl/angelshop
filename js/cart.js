@@ -1,3 +1,4 @@
+// 若用户没有登录，点击“加入购物车”或返回到登录页
 function addToCart(clotheID, clotheName) {
     var cookies = document.cookie;
     if (cookies.length > 0) {
@@ -9,7 +10,7 @@ function addToCart(clotheID, clotheName) {
         location.href = "http://localhost:8080/angelshop/login.html";
     }
 }
-
+// 若用户没有登录，点击“我的购物车”或返回到登录页
 function listCart() {
     var cookies = document.cookie;
     if (cookies.length > 0) {
@@ -21,11 +22,12 @@ function listCart() {
         location.href = "http://localhost:8080/angelshop/login.html";
     }
 }
+// 更新购物车
 var xmlHttp;
 var countSpan;
 var totalSpan;
 window.addEventListener('load', init);
-
+// 给相关元素绑定事件
 function init() {
     countSpan = document.getElementById("count");
     totalSpan = document.getElementById("total");
